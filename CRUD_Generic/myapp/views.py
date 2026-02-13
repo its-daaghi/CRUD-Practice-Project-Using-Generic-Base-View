@@ -5,8 +5,6 @@ from django.urls import reverse_lazy
 
 
 # Create your views here.
-def home(request):
-    return render(request, "myapp/student.html")
 
 
 class StudentCreateView(CreateView):
@@ -14,3 +12,9 @@ class StudentCreateView(CreateView):
     fields = ["name", "roll", "marks"]
     template_name = "myapp/student_form.html"
     success_url = reverse_lazy("student_list")  # redirect after save
+
+
+class StudentListView(ListView):
+    model = Student
+    template_name = "myapp/student_list.html"
+    context_object_name = "students"

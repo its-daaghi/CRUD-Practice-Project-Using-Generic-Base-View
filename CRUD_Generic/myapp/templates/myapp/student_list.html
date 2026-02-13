@@ -1,0 +1,24 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<h2>Student List</h2>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Roll</th>
+        <th>Marks</th>
+    </tr>
+
+    {% for student in students %}
+    <tr>
+        <td>{{ student.name }}</td>
+        <td>{{ student.roll }}</td>
+        <td>{{ student.marks }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="{% url 'student_add' %}">Add Student</a>
+
+{% endblock %}
