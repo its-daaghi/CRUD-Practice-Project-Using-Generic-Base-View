@@ -7,6 +7,7 @@ from django.views.generic import (
     DeleteView,
 )
 from .models import Student
+from .forms import StudentForm
 from django.urls import reverse_lazy
 
 
@@ -15,7 +16,7 @@ from django.urls import reverse_lazy
 
 class StudentCreateView(CreateView):
     model = Student
-    fields = ["name", "roll", "marks"]
+    form_class = StudentForm
     template_name = "myapp/student_form.html"
     success_url = reverse_lazy("student_list")  # redirect after save
 
