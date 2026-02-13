@@ -30,3 +30,10 @@ class StudentDetailView(DetailView):
     model = Student
     template_name = "myapp/student_detail.html"
     context_object_name = "student"
+
+
+class StudentUpdateView(UpdateView):
+    model = Student
+    fields = ["name", "roll", "marks"]
+    template_name = "myapp/student_form.html"
+    success_url = reverse_lazy("student_list")
