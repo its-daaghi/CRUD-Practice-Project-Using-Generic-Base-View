@@ -1,0 +1,19 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+
+<h2>Student Details</h2>
+
+<div class="card" style="width: 25rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ studet.name }}</h5>
+
+    <p class="card-text">
+        <strong>Roll:</strong> {{ student.roll }} <br>
+        <strong>Marks:</strong> {{ student.marks }}
+    </p>
+    <a href="{% url 'student_list' %}" class="btn btn-secondary">Back</a>
+  </div>
+</div>
+
+{% endblock %}
